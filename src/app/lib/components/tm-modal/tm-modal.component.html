@@ -1,0 +1,26 @@
+<div class="modal"
+    [ngClass]="{'alert': type() === 'alert'}"
+    [class.fullSize]="fullSize()"
+    [class.open]="isOpenModal()">
+    <div class="modal__container">
+        <div class="modal__header">
+            <p class="
+                font__size--h6
+                font__color--primary
+                font__weight--semibold
+                ">
+                {{ title() }}
+            </p>
+            <div class="icon__close" (click)="toggleModal()">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="modal__body">
+            <span class="hr"></span>
+            <ng-content select="[modal-body]"></ng-content>
+        </div>
+        <div class="modal__footer"></div>
+    </div>
+    <div class="modal__background"></div>
+</div>

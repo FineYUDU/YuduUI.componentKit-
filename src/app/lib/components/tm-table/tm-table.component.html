@@ -1,0 +1,43 @@
+<div class="table__header">
+    <div class="input__header">
+        <ng-content select="[input]"></ng-content>
+    </div>
+    <div class="buttons__header">
+        <ng-content select="[buttons]"></ng-content>
+    </div>
+</div>
+<table id="current-table">
+    <thead>
+        <ng-content select="[thead]">
+            <!-- ? Copy this code
+                <tr>
+                    <th>Title 1</th>
+                    <th>Title 2</th>
+                    <th>Title 3</th>
+                </tr> 
+            -->
+        </ng-content>
+    </thead>
+    <tbody>
+        <ng-content select="[tbody]">
+            <!-- ? Copy this code
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 1</td>
+                    <td>Data 1</td>
+                </tr>
+                <tr class="row--even">
+                    <td>Data 2</td>
+                    <td>Data 2</td>
+                    <td>Data 2</td>
+                </tr> 
+            -->
+        </ng-content>
+    </tbody>
+    
+</table>
+<div class="table__footer">
+    <ng-content select="[table-footer]">
+
+    </ng-content>
+</div>

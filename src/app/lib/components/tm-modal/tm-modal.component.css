@@ -1,0 +1,110 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    padding-top:var(--spacing-sm);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    pointer-events: none;
+
+    .modal__container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        background-color: var(--yd-color-surface-secondary);
+        border-radius: var(--radius-minimal);
+        z-index: 1;
+        padding: var(--spacing-sm);
+        transition:clip-path .3s ease-in-out;
+        clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+        width: fit-content;
+        height: fit-content;
+        
+        .modal__header {
+            display: flex;
+            justify-content: space-between;
+
+            .icon__close {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 1.5625rem;
+                height: 1.5625rem;
+                position: relative;
+                cursor: pointer;
+
+                span {
+                    position: absolute;
+                    display: block;
+                    width: 1.375rem;
+                    height: .0938rem;
+                    border-radius: var(--radius-minimal);
+                    background-color: var(--yd-color-border-primary);
+                }
+                span:nth-of-type(1) {
+                    transform: rotate(45deg);
+                }
+                span:nth-of-type(2) {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        .modal__body {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            height: 100%;
+            
+            .hr {
+                height: .0313rem;
+                width: 100%;
+                background-color: var(--yd-color-border-secondary);
+            }
+        }
+    }
+    .modal__background {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        background-color: black;
+        pointer-events: none;
+        transition: opacity .3s ease-in-out;
+        
+    }
+
+    &.open {
+        overflow: auto;
+        pointer-events: all;
+        .modal__container {
+            transition:clip-path .3s ease-in-out;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        .modal__background {
+            opacity: .7;
+            transition: opacity .3s ease-in-out;
+        }
+    }
+    &.fullSize {
+        .modal__container {
+            width: 80%;
+            height: fit-content;
+        }
+    }
+
+    &.alert {
+        .modal__container {
+            .modal__header {
+                .icon__close {
+                    display: none;
+                }
+            }
+        }   
+    }
+
+}

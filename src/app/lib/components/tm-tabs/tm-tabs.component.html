@@ -1,0 +1,8 @@
+<div class="tabs__container">
+     <ul class="tab__list">
+        <ng-content select="[tabs]"></ng-content>
+     </ul>
+      <div class="tab__content-proyection" [style]="{'max-height':maxHeight()+'px'}">
+         <ng-content select="[tab-selected]"></ng-content>
+      </div>
+</div>

@@ -1,0 +1,36 @@
+[contenteditable]:focus {
+  outline: none;
+}
+.rich-text-editor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: var(--radius-minimal)0.5rem;
+    border: var(--border-sm) solid var(--yd-color-border-secondary);
+    background-color: var(--yd-color-surface-secondary);
+    min-height: 6.25rem;
+    
+    .content__text {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: var(--font-size-c1);
+        color: var(--yd-color-text-primary);
+    }
+    
+    .rich-text-editor__controls {
+        padding-inline: var(--spacing-xs);
+        .controls__container {
+            display: flex;
+            gap: var(--spacing-xs);
+            border-top: var(--border-sm) solid var(--yd-color-border-tertiary);
+
+            .button-control {
+                cursor: pointer;
+                display: flex;
+                padding: var(--spacing-xs);
+                &:hover {
+                    opacity: .8;
+                }
+            }
+        }
+    }
+}

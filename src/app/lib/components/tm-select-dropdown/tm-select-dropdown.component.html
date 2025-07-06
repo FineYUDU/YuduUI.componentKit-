@@ -1,0 +1,94 @@
+<div class="select-dropdown__container" [class.readonly]="readonly()" #selectDropdown>
+    <label class="input__body">
+        @if (label()) {
+            <p class="
+                cursor--pointer
+                font__size--c1
+                forn__weight--medium
+                font__color--secondary
+                " 
+                [class.font__color--danger]="hasAnError()">
+                {{label()}}
+            </p>
+        }
+        <div class="input" 
+            [class.w--100]="fill()"
+            [class.icon]="icon()"
+            [class.readonly]="readonly()"
+            >
+            @if (icon()) {
+                <ng-content select="[input-icon]"></ng-content>
+                <!-- ? Copy this to use an icon and add "icon" in main component
+                    <ng-container input-icon>
+                        <img 
+                            src="iconRoute" 
+                            alt=""
+                            width="15"
+                            height="15"
+                        >
+                    </ng-container>
+                 -->
+            } 
+            @if(textarea()) {
+                <textarea 
+                    #input
+                    [value]="fieldValue()"
+                    (blur)="onBlur()"
+                    (input)="changeValue($event)"
+                    [disabled]="disabled() || readonly()"
+                    [placeholder]="placeholder()"
+                    [class.input-error]="hasAnError()"
+                >
+
+                </textarea>
+            } @else {
+                <input
+                    #input
+                    class="transition--bg"
+                    [class.input-error]="hasAnError()"
+                    [disabled]="true"
+                    [placeholder]="placeholder()"
+                    [type]="'text'" 
+                    [value]="fieldValue()"
+                    (input)="changeValue($event)"
+                    (blur)="onBlur()"
+                >
+            }
+             @if (hasAnError()) {
+                <span class="
+                    font__size--c1 
+                    font__color--danger
+                    font__weight--regular
+                    error-message
+                    ">
+                    {{errorMessage()}}
+                </span>
+            }
+            <img 
+                [ngClass]="{'open': isDropdownOpen()}"
+                class="icon-chevron"
+                [ngSrc]="'./assets/theme/'+themeService.GetTheme+'/icon/icon-chevron.svg'" 
+                alt="icon chevron"
+                width="15"
+                height="15"
+            >
+            <div class="input-ghost" (click)="toggleDropdown()"></div>
+        </div>
+    </label>
+    <div class="dropdown" [ngClass]="{'open': isDropdownOpen()}">
+        <ul>
+            @for (item of listItems(); 
+                let i = $index;
+                track i) {
+                <li (click)="setItem(item)"
+                    class="
+                        font__size--c2
+                        font__color--primary
+                        font__weight--medium
+                    ">
+                    {{ item.text }}
+                </li>
+            }
+        </ul>
+    </div>
+</div>

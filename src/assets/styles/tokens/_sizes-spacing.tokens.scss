@@ -1,0 +1,26 @@
+@use '../variables/sizes.variables' as *;
+
+* {
+    --spacing-3xs                                               :#{$baseunit-2};
+    --spacing-2xs                                               :#{$baseunit-3};
+    --spacing-xs                                                :#{$baseunit-4};
+    --spacing-sm                                                :#{$baseunit-6};
+    --spacing-md                                                :#{$baseunit-10};
+    --spacing-lg                                                :#{$baseunit-13};
+    --spacing-xl                                                :#{$baseunit-15};
+    --spacing-2xl                                               :#{$baseunit-20};
+    --spacing-blocks                                            :#{$baseunit-7};
+    
+    --radius-0                                                  :#{$baseunit-3};
+    --radius-minimal                                            :#{$baseunit-4};
+    --radius-rounded                                            :#{$baseunit-6};
+    --radius-full                                               :#{$baseunit-22};
+    
+    --border-xs                                                 :#{$auxunit-1};
+    --border-sm                                                 :#{$auxunit-2};
+    --border-md                                                 :#{$auxunit-3};
+    --border-lg                                                 :#{$auxunit-5};
+    --border-xl                                                 :#{$baseunit-3};
+    
+    --size-header                                               :2.1875rem;
+}

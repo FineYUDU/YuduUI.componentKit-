@@ -1,0 +1,122 @@
+@use '../variables/colors.variables' as *;
+
+.theme--light {
+    --yd-color-text-primary                                     :#{$grey-600};
+    --yd-color-text-secondary                                   :#{$grey-400};
+    --yd-color-text-tertiary                                    :#{$grey-50};
+    --yd-color-text-quaternary                                  :#{$grey-500};
+    
+    --yd-color-surface-primary                                  :#{$grey-50};
+    --yd-color-surface-secondary                                :#{$grey-0};
+    --yd-color-surface-tertiary                                 :#{$grey-50};
+    --yd-color-surface-quaternary                               :#{$grey-200};
+    --yd-color-surface-quinary                                  :#{$grey-600};
+
+    --yd-color-border-primary                                   :#{$grey-400};
+    --yd-color-border-secondary                                 :#{$grey-200};
+    --yd-color-border-tertiary                                  :#{$grey-100};
+    --yd-color-border-quaternary                                :#{$grey-50};
+    
+    --yd-color-text-brand-primary                               :#{$brand-300};
+    --yd-color-text-brand-secondary                             :#{$brand-200};
+    
+    --yd-color-surface-brand-primary                            :#{$brand-300};
+    --yd-color-surface-brand-secondary                          :#{$brand-100};
+    
+    --yd-color-border-brand-primary                             :#{$brand-300};
+    --yd-color-border-brand-secondary                           :#{$brand-200};
+    
+    --yd-color-text-info-primary                                :#{$blue-400};
+    --yd-color-text-info-secondary                              :#{$blue-500};
+    --yd-color-text-info-tertiary                               :#{$blue-0};
+    
+    --yd-color-surface-info-primary                             :#{$blue-0};
+    --yd-color-surface-info-secondary                           :#{$blue-100};
+    --yd-color-surface-info-tertiary                            :#{$blue-300};
+    --yd-color-surface-info-quaternary                          :#{$blue-400};
+    --yd-color-surface-info-quinary                             :#{$blue-200};
+    
+    --yd-color-border-info-primary                              :#{$blue-300};
+    --yd-color-border-info-secondary                            :#{$blue-500};
+    
+    --yd-color-text-danger-primary                              :#{$danger-300};
+    --yd-color-text-danger-secondary                            :#{$danger-500};
+    
+    --yd-color-surface-danger-primary                           :#{$danger-200};
+    --yd-color-surface-danger-secondary                         :#{$danger-0};
+
+    --yd-color-border-danger-primary                            :#{$danger-100};
+    --yd-color-border-danger-secondary                          :#{$danger-300};
+    --yd-color-border-danger-tertiary                           :#{$danger-500};
+    
+    --yd-color-text-warning-primary                              :#{$warning-500};
+    
+    --yd-color-surface-warning-primary                           :#{$warning-300};
+    --yd-color-surface-warning-secondary                         :#{$warning-0};
+
+    --yd-color-border-warning-primary                            :#{$warning-400};
+    --yd-color-border-warning-secondary                          :#{$warning-300};
+    --yd-color-border-warning-tertiary                           :#{$warning-500};
+    
+    --yd-color-text-success-primary                              :#{$success-300};
+    
+    --yd-color-surface-success-primary                           :#{$success-300};
+    --yd-color-surface-success-secondary                         :#{$success-0};
+
+    --yd-color-border-success-primary                            :#{$success-300};
+    --yd-color-border-success-secondary                          :#{$success-100};
+    --yd-color-border-success-tertiary                           :#{$success-50};
+    --yd-color-border-success-quaternary                         :#{$success-0};
+    // <------- buttons -------->
+    // Primary
+    --yd-btn-color-primary-text-default                         :#{$grey-0};
+    --yd-btn-color-primary-text-hover                           :#{$grey-50};
+    --yd-btn-color-primary-text-active                          :#{$grey-0};
+    --yd-btn-color-primary-text-disabled                        :#{$grey-500};
+
+    --yd-btn-color-primary-surface-default                      :#{$brand-300};
+    --yd-btn-color-primary-surface-hover                        :#{$brand-200};
+    --yd-btn-color-primary-surface-active                       :#{$brand-400};
+    --yd-btn-color-primary-surface-disabled                     :#{$grey-200};
+
+    --yd-btn-color-primary-border-default                       :transparent;
+    --yd-btn-color-primary-border-hover                         :transparent;
+    --yd-btn-color-primary-border-active                        :transparent;
+    --yd-btn-color-primary-border-disabled                      :transparent;
+
+    --yd-btn-color-primary-outline-focus                        :#{$grey-100};
+    // Secondary
+    --yd-btn-color-secondary-text-default                       :#{$grey-600};
+    --yd-btn-color-secondary-text-hover                         :#{$grey-600};
+    --yd-btn-color-secondary-text-active                        :#{$grey-700};
+    --yd-btn-color-secondary-text-disabled                      :#{$grey-500};
+
+    --yd-btn-color-secondary-surface-default                    :transparent;
+    --yd-btn-color-secondary-surface-hover                      :#{$grey-100};
+    --yd-btn-color-secondary-surface-active                     :#{$grey-300};
+    --yd-btn-color-secondary-surface-disabled                   :transparent;
+    
+    --yd-btn-color-secondary-border-default                     :#{$grey-200};
+    --yd-btn-color-secondary-border-hover                       :#{$grey-550};
+    --yd-btn-color-secondary-border-active                      :#{$grey-300};
+    --yd-btn-color-secondary-border-disabled                    :#{$grey-500};
+
+    --yd-btn-color-secondary-outline-focus                      :#{$blue-200};
+    // Tertiary
+    --yd-btn-color-tertiary-text-default                        :#{$grey-600};
+    --yd-btn-color-tertiary-text-hover                          :#{$grey-550};
+    --yd-btn-color-tertiary-text-active                         :#{$grey-700};
+    --yd-btn-color-tertiary-text-disabled                       :#{$grey-500};
+
+    --yd-btn-color-tertiary-surface-default                     :transparent;
+    --yd-btn-color-tertiary-surface-hover                       :#{$grey-100};
+    --yd-btn-color-tertiary-surface-active                      :#{$grey-200};
+    --yd-btn-color-tertiary-surface-disabled                    :transparent;
+    
+    --yd-btn-color-tertiary-border-default                      :transparent;
+    --yd-btn-color-tertiary-border-hover                        :transparent;
+    --yd-btn-color-tertiary-border-active                       :transparent;
+    --yd-btn-color-tertiary-border-disabled                     :transparent;
+
+    --yd-btn-color-tertiary-outline-focus                       :#{$blue-200};
+}

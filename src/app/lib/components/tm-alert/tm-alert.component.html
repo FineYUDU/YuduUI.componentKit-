@@ -1,0 +1,55 @@
+<div class="alert__container"
+    [class.open]="isOpenAlert()"
+    >
+    <div class="alert">
+        <div class="alert__body">
+            <div class="icon__container">
+                @if(success()) {
+                    <div class="icon-success">
+                        <div class="checkmark"></div>
+                    </div>
+                }
+                @else if (danger()) {
+                    <div class="icon-danger">
+                        <div class="icon-cross">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="text__container">
+                @if (title()) {
+                    <p class="
+                        font__size--b1
+                        font__color--primary
+                        font__weight--medium
+                        ">
+                        {{title()}}
+                    </p>
+                }
+                @if (message()) {
+                    <p class="
+                        font__size--c1
+                        font__color--secondary
+                        font__weight--medium
+                        ">
+                        {{message()}}
+                    </p>
+                }
+            </div>
+        </div>
+
+        <div class="alert__footer">
+            <tm-button 
+                (click)="toggleAlert()"
+                fullSize
+                primary
+                size="md">
+                {{closeButtonText()}}
+            </tm-button>
+        </div>
+    </div>
+    
+    <div class="bg__alert"></div>
+</div>

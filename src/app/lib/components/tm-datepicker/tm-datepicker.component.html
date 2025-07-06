@@ -1,0 +1,37 @@
+<div class="input__container" [class.readonly]="readonly()">
+  <label class="input__body">
+    @if (label()) {
+      <p class="
+        cursor--pointer
+        font__size--c1
+        forn__weight--medium
+        font__color--secondary
+      " [class.font__color--danger]="hasAnError()">
+        {{ label() }}
+      </p>
+    }
+
+    <div class="input"
+         [class.w--100]="fill()"
+         [class.readonly]="readonly()">
+      <input
+        type="date"
+        class="transition--bg"
+        [value]="fieldValue()"
+        [placeholder]="placeholder()"
+        [readonly]="readonly()"
+        [disabled]="disabled() || isDisabled()"
+        [min]="minDate"
+        [class.input-error]="hasAnError()"
+        (input)="changeValue($event)"
+        (blur)="onBlur()"
+        />
+
+      @if (hasAnError()) {
+        <span class="font__size--c1 font__color--danger font__weight--regular error-message">
+          {{ errorMessage() }}
+        </span>
+      }
+    </div>
+  </label>
+</div>

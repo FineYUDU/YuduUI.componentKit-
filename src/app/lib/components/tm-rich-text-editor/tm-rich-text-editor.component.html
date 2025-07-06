@@ -1,0 +1,45 @@
+
+<div
+    class="rich-text-editor">
+    <div 
+        #editor
+        contenteditable="true"
+        class="content__text"
+        (mouseup)="onSelectionChange()"
+        (keyup)="onSelectionChange()">
+        Descripción...
+    </div>
+    <div class="rich-text-editor__controls">
+        <div class="controls__container">
+            <span (click)="setBold()"
+                class="
+                    button-control
+                    font__size--b1
+                    font__color--primary
+                    font__weight--bold
+                ">
+                B
+            </span>
+            <span (click)="setItalic()" 
+                class="
+                    button-control
+                    font__style--italic
+                    font__size--b1
+                    font__color--primary
+                    font__weight--regular
+                ">
+                I
+            </span>
+            <span (click)="setUnderline()" 
+                class="
+                    button-control
+                    font__decoration--underline
+                    font__size--b1
+                    font__color--primary
+                    font__weight--regular
+                ">
+                U
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<label class="checkbox__container">
+    <div class="checkbox" 
+        [ngClass]="{'selected': isSelected()}"
+        (click)="onCheckboxChange()">
+        <div class="checkmark"></div>
+    </div>
+    @if (label()) {
+        <span class="
+            font__size--c1
+            font__color--secondary
+            font__weight--medium
+            ">
+            {{ label() }}
+        </span>
+    }
+</label>

@@ -1,0 +1,15 @@
+<button
+    [type]="type()"
+    class="btn"
+    [ngClass]="{
+        'sm': size() === 'sm',
+        'md': size() === 'md'
+    }"
+    [class.btn__primary]="primary()"
+    [class.btn__secondary]="secondary()"
+    [class.btn__tertiary]="tertiary()"
+    [class.btn__disabled]="disabled()"
+    [class.w--100]="fullSize()"
+    >
+    <ng-content></ng-content>
+</button>

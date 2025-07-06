@@ -1,0 +1,69 @@
+<div class="dropdown__container" 
+    #dropdown
+    [ngClass]="{
+        'sm': size() === 'sm',
+        'md': size() === 'md'
+    }">
+    <button
+        type="button"
+        class="btn"
+        [ngClass]="{
+            'sm': size() === 'sm',
+            'md': size() === 'md'
+        }"
+        [class.btn__primary]="primary()"
+        [class.btn__secondary]="secondary()"
+        [class.btn__tertiary]="tertiary()"
+        [class.btn__disabled]="disabled()"
+        [class.w--100]="fullSize()"
+        (click)="isDropdownOpen.set(!isDropdownOpen())"
+        [class.dropdown__active]="isDropdownOpen()"
+        >
+        <ng-content select="[list-name]"></ng-content>
+        @if (icon() === 'chevron') {
+            <img
+                [ngSrc]="'./assets/theme/'+themeService.GetTheme+'/icon/icon-chevron.svg'"
+                alt="chevron"
+                width="12"
+                height="12"
+                class="chevron"
+                [class.chevron__open]="isDropdownOpen()"
+            >
+        } 
+        @if(icon() === 'options') {
+            <div class="icon__menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+          
+        }
+    </button>
+    <div 
+        class="dropdown z-index-1"
+        [class.dropdown-open]="isDropdownOpen()"
+        >
+        <ul class="dropdown-list">
+            <ng-content select="[dropdown-list]"></ng-content>
+            <!-- Copy all the ng-container to create your list
+
+            <ng-container dropdown-list>
+                <li>
+                    <span>
+                        item-name
+                    </span>
+                    <img 
+                        src="icon-route"
+                        alt=""
+                        width="14"
+                        height="14"
+                    >
+                </li> 
+            </ng-container>
+            
+            -->
+        </ul>
+    </div>
+
+
+</div>

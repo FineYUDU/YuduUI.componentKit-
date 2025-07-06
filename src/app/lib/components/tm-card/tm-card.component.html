@@ -1,0 +1,57 @@
+<div class="card__container" [class.outline]="outline()">
+    <div class="card__header">
+        <div class="card__profile-picture">
+            @if (profilePicture()) {
+                <img 
+                    class="border--img"
+                    [src]="profilePicture()" 
+                    alt=""
+                    width="55"
+                    height="55"
+                >
+            } @else {
+                <div class="no-profile">
+                    <img 
+                        [ngSrc]="'./assets/theme/'+themeService.GetTheme+'/icon/icon-user.svg'" 
+                        alt=""
+                        width="28"
+                        height="28"
+                    >
+                </div>
+            }
+        </div>
+        <div class="btns-card">
+            <ng-content select="[card-button]"></ng-content>
+        </div>
+        
+    </div>
+    <div class="card__body">
+        <div class="title">
+            <p class="
+                font__size--c1
+                font__color--primary
+                font__weight--medium
+                ">
+                {{ title() }}           
+            </p>
+            @if (badge()) {
+                <span class="badge"> 
+                    {{ badge()}} 
+                </span>
+            }
+        </div>
+        <div class="hr"></div>
+        <p class="
+            description__txt
+            font__size--b2
+            font__color--primary
+            font__weight--semibold
+            ">
+            {{ description() }}
+        </p>
+
+    </div>
+    <div class="card__footer">
+        <ng-content select="[card-footer]"></ng-content>
+    </div>
+</div>

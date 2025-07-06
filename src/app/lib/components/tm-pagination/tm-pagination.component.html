@@ -1,0 +1,109 @@
+<div class="pagination">
+    <div class="showing">
+        <p class="
+            font__size--b2
+            font__color--primary
+            font__weight--medium
+            ">
+            {{ 'table.pagination.total' | language:languageService.GetLang }} :
+        </p>
+        <span class="
+            btn--arrow
+            font__size--b2
+            font__color--link
+            font__weight--medium
+            ">
+            {{amount()}}
+        </span>
+        <p class="
+            font__size--b2
+            font__color--primary
+            font__weight--medium
+            ">
+            {{ 'table.pagination.showing' | language:languageService.GetLang }} :
+        </p>
+        <span class="
+            btn--arrow
+            font__size--b2
+            font__color--link
+            font__weight--medium
+            ">
+            {{limitPage()}}
+        </span>
+    </div>
+
+    
+    <a class="btn--arrow" 
+        (click)="backToFirstPage()"
+        #buttonBackToFirstPage
+        [ngClass]="{'disabled--btn': offsetPage() < limitPage()}"
+        >
+        <span class="
+            font__size--b1
+            font__weight--medium
+            font__color--secondary
+            ">
+            |
+        </span>
+        <img class="chevron--prev"
+            [ngSrc]="'./assets/theme/'+themeService.GetTheme+'/icon/icon-chevron.svg'"
+            width="13"
+            height="13"
+        >
+    </a>
+    <a class="btn--arrow" 
+        (click)="prevPage()"
+        [ngClass]="{'disabled--btn': offsetPage() < limitPage()}"
+        >
+        <img class="chevron--prev"
+        [ngSrc]="'./assets/theme/'+themeService.GetTheme+'/icon/icon-chevron.svg'"
+        width="13"
+        height="13"
+        >
+    </a>
+
+    <p class="
+        font__size--b2
+        font__color--primary
+        font__weight--medium
+        ">
+        <span class="
+            font__color--primary
+            font__weight--medium
+            paginatio__txt
+            ">
+            {{ 'table.pagination.page' | language:languageService.GetLang}}
+        </span>
+        {{currentPage()}} 
+        {{'table.pagination.of' | language:languageService.GetLang}}
+        {{totalPages()}}
+    </p>
+    
+    <a class="btn--arrow" 
+        (click)="nextPage()"
+        [ngClass]="{'disabled--btn': offsetPage() + limitPage() >= dataLenght() }"
+        >
+        <img class="chevron--next"
+            [ngSrc]="'./assets/theme/'+themeService.GetTheme+'/icon/icon-chevron.svg'"
+            width="13"
+            height="13"
+        >
+    </a>
+    <a class="btn--arrow" 
+        (click)="goToLastPage()"
+        [ngClass]="{'disabled--btn': offsetPage() + limitPage() >= dataLenght()}"
+        >
+        <img class="chevron--next"
+        [ngSrc]="'./assets/theme/'+themeService.GetTheme+'/icon/icon-chevron.svg'"
+        width="13"
+        height="13"
+        >
+        <span class="
+            font__size--b1
+            font__weight--medium
+            font__color--secondary
+            ">
+            |
+        </span>
+    </a>
+</div>

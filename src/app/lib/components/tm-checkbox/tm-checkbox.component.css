@@ -1,0 +1,37 @@
+.checkbox__container {
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: center;
+    cursor: pointer;
+
+    .checkbox {
+        position: relative;
+        width: 1.125rem;
+        height: 1.125rem;
+        border: var(--border-sm) solid var(--yd-color-border-secondary);
+        border-radius: .125rem;
+        cursor: pointer;
+        
+        &.selected {
+            border: var(--border-sm) solid var(--yd-color-surface-info-tertiary);
+            background-color: var(--yd-color-surface-info-tertiary);
+    
+            .checkmark {
+                opacity: 1;
+            }
+        }
+        .checkmark {
+            position: absolute;
+            top: .125rem;
+            right: 0;
+            bottom: 0;
+            left: .3375rem;
+            width: .3125rem;
+            height: .625rem;
+            border: solid #ffffff;
+            border-width: 0 .1375rem .1375rem 0;
+            transform: rotate(45deg);
+            opacity: 0;
+        }
+    }
+}

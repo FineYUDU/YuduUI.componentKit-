@@ -1,0 +1,41 @@
+<div class="input__container" [class.readonly]="readonly()">
+  <label class="input__body">
+    @if (label()) {
+      <div class="label__container">
+        <p class="
+            cursor--pointer
+            font__size--c1
+            forn__weight--medium
+            font__color--secondary">
+          {{ label() }}
+        </p>
+        <p class="
+          font__size--c1
+          font__color--primary
+          font__weight--medium
+          text--right
+          text-progress
+          ">
+          {{ fieldValue() }}%
+        </p>
+      </div>
+    }
+
+    <div class="input"
+         [class.w--100]="fill()"
+         [class.readonly]="readonly()">
+      <input
+        type="range"
+        class="transition--bg"
+        [value]="fieldValue()"
+        [min]="min()"
+        [max]="max()"
+        [step]="step()"
+        [readonly]="readonly()"
+        [disabled]="disabled() || isDisabled()"
+        (input)="changeValue($event)"
+        (blur)="onBlur()"
+      />
+    </div>
+  </label>
+</div>
